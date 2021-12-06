@@ -1,0 +1,55 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+  freemarker:
+    cache: false    #页面不加载缓存，修改即时生效
+  datasource:
+    username: root
+    password: 951753
+    url: jdbc:mysql://119.29.40.89:3306/my_tools?serverTimezone=GMT%2B8&characterEncoding=UTF-8&useAffectedRows=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      max-lifetime: 60000
+  jackson:
+    time-zone: GMT+8
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    #打印sql语句
+    #使用驼峰式命名规则
+    map-underscore-to-camel-case: true
+    #开启延迟加载
+    aggressive-lazy-loading: false
+    lazy-loading-enabled: true
+server:
+  servlet:
+    encoding:
+      enabled: true
+      force: true
+      charset: UTF-8
+  tomcat:
+    basedir: /tmp/tubai/hospital_project
+    uri-encoding: UTF-8
+  port: 2333
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      # 表名、是否使用下划线命名，默认数据库表使用下划线命名
+      table-underline: true
+      # 逻辑已删除值(默认为 1)
+      logic-delete-value: true
+      # 逻辑未删除值(默认为 0)
+      logic-not-delete-value: false
+  mapper-locations:
+    - /mybatis/mapper/*.xml
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countsql
+logging:
+  config: classpath:logback.xml

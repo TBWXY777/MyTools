@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>WXY网盘</title>
+		<link rel="shortcut icon" href="./img/dts.ico" type="image/x-icon">
+		<link rel="stylesheet" href="./css/index.css" />
+		<script type="text/javascript" src="./lib/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="./js/utils/TimeUtils.js"></script>
+		<script type="text/javascript" src="./js/constant/urls.js"></script>
+		<script type="text/javascript" src="./js/constant/SysConstent.js"></script>
+		<script type="text/javascript" src="./lib/web-uploader.min-0.1.6.js"></script>
+		<script type="text/javascript" src="./lib/uploader.js"></script>
+		<script type="text/javascript" src="./js/page/index.js"></script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="top">
+				<p class="t-title"><i>欢迎来到我的网盘</i></p>
+				<a class="t-right" href="javascript:;" onclick="refresh()">刷新</a>
+			</div>
+			<div class="sync-time">
+				文件同步时间：<span id="curr-date"></span>
+			</div>
+			<div>
+				<marquee behavior="scroll" bgcolor="pink" width="100%">注意：同名文件会被覆盖</marquee>
+			</div>
+			<div class="file-list" id="fileList">
+				<ul id="fileListUl">
+					<li class="fl-li" id="addFile">
+						<img src="./img/添加.png">
+						<label>添加文件</label>
+					</li>
+				</ul>
+			</div>
+			<!-- 上传进度 -->
+			<div class="upload-progress" id="uploadProgress">
+				<img id="up-spread" src="./img/上.png" />
+				<div class="up-content">
+					<ul class="upc-data" id="upcData"></ul>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./js/utils/line-background.js"></script>
+	</body>
+</html>
